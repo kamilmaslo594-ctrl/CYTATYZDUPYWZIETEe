@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Cytaty chaosu</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    color: white;
+    font-family: Arial;
+  }
+
+  .box {
+    width: 500px;
+    padding: 25px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00e0ff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #text {
+    margin-top: 15px;
+    font-size: 18px;
+    min-height: 80px;
+  }
+
+  .author {
+    margin-top: 10px;
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h2>Cytaty życia</h2>
+  <div id="text">Kliknij żeby dostać cytat</div>
+  <div class="author" id="author"></div>
+  <button onclick="gen()">Nowy cytat</button>
+</div>
+
+<script>
+
+const quotes = [
+"Życie to błąd w systemie, który nauczyliśmy się ignorować.",
+"Nie wszystko musi mieć sens, niektóre rzeczy po prostu się psują.",
+"Czas nie leczy błędów, tylko je ukrywa.",
+"Rzeczywistość działa na losowym kodzie i nikt nie ma dokumentacji.",
+"Największy glitch to człowiek.",
+"Jeśli coś działa, nie pytaj dlaczego.",
+"Wszechświat też ma dni wolne.",
+"Każdy ma w sobie crash systemu.",
+"Nie szukaj logiki tam gdzie jest chaos.",
+"Sen to debugowanie mózgu.",
+"Niektóre decyzje są permanentnym bugiem.",
+"Im więcej wiesz, tym więcej widzisz błędów.",
+"Każdy dzień to update bez patch notes.",
+"Nie jesteś spóźniony, czas tylko się laguje.",
+"System nigdy nie był stabilny.",
+"Życie to sandbox bez tutoriala.",
+"Błędy są jedyną stałą funkcją świata.",
+"Nic nie jest przypadkiem, wszystko to bug.",
+"Emocje to zmienne bez typu.",
+"Nie ma restartu, jest tylko kontynuacja błędu.",
+"Każdy człowiek to osobny proces w chaosie.",
+"Zrozumienie systemu go psuje.",
+"To nie Ty się gubisz, to mapa się zmienia.",
+"Rzeczywistość renderuje się na bieżąco.",
+"Najlepsze rozwiązania są nieplanowane.",
+"Nie wszystko trzeba naprawiać.",
+"Każdy ma swój własny crash log.",
+"Świat działa, bo nikt nie debugował.",
+"Logika to opcjonalny plugin.",
+"Największe błędy są najbardziej ludzkie.",
+];
+
+// generowanie do 100+ przez powielenie z lekką zmianą
+while (quotes.length < 120) {
+  quotes.push(quotes[Math.floor(Math.random() * 30)] + " (wersja alternatywna)");
+}
+
+const authors = [
+"Anonim","System","Użytkownik 404","Debuger życia","Nieznany proces","Wszechświat","Błąd 0x000"
+];
+
+function gen() {
+  document.getElementById("text").innerText =
+    quotes[Math.floor(Math.random()*quotes.length)];
+
+  document.getElementById("author").innerText =
+    "- " + authors[Math.floor(Math.random()*authors.length)];
+}
+
+</script>
+
+</body>
+</html>
